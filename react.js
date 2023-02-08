@@ -36,5 +36,9 @@ module.exports= {
     react: {
       version: 'detect'
     }
-  }
+  },
+  env: {
+    "node": true,
+    "browser": true,
+  },
 }
