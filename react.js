@@ -1,5 +1,6 @@
 module.exports= {
   env: {
+    node: true,
     browser: true
   },
   extends: [
@@ -15,6 +16,7 @@ module.exports= {
   plugins: [
     'react',
     'jsx-a11y',
+    'simple-import-sort'
   ],
   rules: {
     'react/react-in-jsx-scope': 'off',
@@ -32,6 +34,27 @@ module.exports= {
     'jsx-a11y/role-has-required-aria-props': 'warn',
     'jsx-a11y/role-supports-aria-props': 'warn',
   },
+  overrides: [
+    {
+      files: ["*.js", "*.jsx", "*.ts", "*.tsx"],
+      rules: {
+        "simple-import-sort/imports": [
+          "error",
+          {
+            groups: [
+              ["^react", "^@?\\w"],
+              ["^(@|components)(/.*|$)"],
+              ["^\\u0000"],
+              ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+              ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+              ["^.+\\.?(css)$"]
+            ]
+          }
+        ],
+        "react-hooks/exhaustive-deps": "off"
+      }
+    }
+  ],
   settings: {
     react: {
       version: 'detect'
