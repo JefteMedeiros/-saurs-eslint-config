@@ -1,17 +1,22 @@
-module.exports= {
+module.exports = {
   env: {
     node: true,
-    browser: true
+    browser: true,
+    jest: true,
   },
   extends: [
     './index.js',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
+    'standard',
+    'plugin:@typescript-eslint/recommended',
   ],
   parserOptions: {
     ecmaFeatures: {
       jsx: true
     },
+    ecmaVersion: 'latest',
+    sourceType: 'module'
   },
   plugins: [
     'react',
@@ -33,6 +38,7 @@ module.exports= {
     'jsx-a11y/aria-unsupported-elements': 'warn',
     'jsx-a11y/role-has-required-aria-props': 'warn',
     'jsx-a11y/role-supports-aria-props': 'warn',
+    'react/no-unknown-property': 'error',
   },
   overrides: [
     {
@@ -58,10 +64,6 @@ module.exports= {
   settings: {
     react: {
       version: 'detect'
-    }
-  },
-  env: {
-    "node": true,
-    "browser": true,
+    },
   },
 }

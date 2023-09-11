@@ -7,10 +7,6 @@ module.exports = {
     "eslint:recommended"
   ],
   parser: "@typescript-eslint/parser",
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module"
-  },
   plugins: [
     "@typescript-eslint",
   ],
@@ -27,7 +23,7 @@ module.exports = {
         endOfLine: "auto"
       }
     ],
-    "no-unused-vars": "off",
+    "no-unused-vars": "error",
     "space-before-blocks": [
       "warn",
       "always"
@@ -41,5 +37,8 @@ module.exports = {
     'import/parsers': {
       [require.resolve('@typescript-eslint/parser')]: ['.ts', '.tsx', '.d.ts'],
     }
-  }
+  },
+  ignorePatterns: [
+    'node_modules'
+  ]
 }
