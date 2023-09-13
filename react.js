@@ -8,7 +8,6 @@ module.exports = {
     './index.js',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
-    'standard',
     'plugin:@typescript-eslint/recommended',
   ],
   parserOptions: {
