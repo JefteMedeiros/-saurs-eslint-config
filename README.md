@@ -1,8 +1,6 @@
 # Saurs ESLint config
 
-- Standard config;
 - React config;
-- Angular config (W.I.P);
 
 ##How to install
 

@@ -1,26 +1,29 @@
 module.exports = {
   env: {
-    node: true,
     browser: true,
     jest: true,
+    es2021: true, 
   },
   extends: [
-    './index.js',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:@typescript-eslint/recommended',
+    "plugin:prettier/recommended", 
+    "eslint:recommended", 
   ],
+  parser: "@typescript-eslint/parser", 
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
-    ecmaVersion: 'latest',
-    sourceType: 'module'
+    ecmaVersion: 'latest', 
+    sourceType: 'module',
   },
   plugins: [
     'react',
     'jsx-a11y',
-    'simple-import-sort'
+    'simple-import-sort',
+    "@typescript-eslint", 
   ],
   rules: {
     'react/react-in-jsx-scope': 'off',
@@ -38,6 +41,27 @@ module.exports = {
     'jsx-a11y/role-has-required-aria-props': 'warn',
     'jsx-a11y/role-supports-aria-props': 'warn',
     'react/no-unknown-property': 'error',
+    "prettier/prettier": [
+      "error",
+      {
+        printWidth: 80,
+        tabWidth: 2,
+        singleQuote: false,
+        trailingComma: "all",
+        arrowParens: "always",
+        semi: false, 
+        endOfLine: "auto",
+      },
+    ],
+    "no-unused-vars": "error",
+    "space-before-blocks": [
+      "warn",
+      "always"
+    ],
+    semi: [
+      "warn",
+      "never" 
+    ],
   },
   overrides: [
     {
@@ -53,16 +77,22 @@ module.exports = {
               ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
               ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
               ["^.+\\.?(css)$"]
-            ]
-          }
+            ],
+          },
         ],
-        "react-hooks/exhaustive-deps": "off"
-      }
-    }
+        "react-hooks/exhaustive-deps": "off", 
+      },
+    },
   ],
   settings: {
     react: {
-      version: 'detect'
+      version: 'detect', 
+    },
+    'import/parsers': {
+      [require.resolve('@typescript-eslint/parser')]: ['.ts', '.tsx', '.d.ts'], 
     },
   },
-}
+  ignorePatterns: [
+    'node_modules', 
+  ],
+};
