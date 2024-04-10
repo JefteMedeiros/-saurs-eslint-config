@@ -63,27 +63,6 @@ module.exports = {
       "never" 
     ],
   },
-  overrides: [
-    {
-      files: ["*.js", "*.jsx", "*.ts", "*.tsx"],
-      rules: {
-        "simple-import-sort/imports": [
-          "error",
-          {
-            groups: [
-              ["^react", "^@?\\w"],
-              ["^(@|components)(/.*|$)"],
-              ["^\\u0000"],
-              ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
-              ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
-              ["^.+\\.?(css)$"]
-            ],
-          },
-        ],
-        "react-hooks/exhaustive-deps": "off", 
-      },
-    },
-  ],
   settings: {
     react: {
       version: 'detect', 
