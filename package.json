@@ -2,7 +2,7 @@
   "name": "@saurs/eslint-config",
   "description": "ESLint configuration used by Saurs developers.",
   "author": "Saurs developers",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "license": "MIT",
   "main": "index.js",
   "repository": {
