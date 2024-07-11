@@ -35,6 +35,7 @@ module.exports = {
       },
     ],
     'jsx-a11y/aria-props': 'warn',
+    'react-hooks/exhaustive-deps': 'off',
     'jsx-a11y/aria-proptypes': 'warn',
     'jsx-a11y/aria-unsupported-elements': 'warn',
     'jsx-a11y/role-has-required-aria-props': 'warn',
